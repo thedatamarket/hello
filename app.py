@@ -1,6 +1,7 @@
 from flask import Flask
 import pandas as pd
 import dropbox
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -24,5 +25,9 @@ def hello_world():
     client.files_upload(open('/output/sample.csv', "rb").read(), dropbox_path)
     return 'Hello, World!'
 
+@app.route('/hi')
+def hello_world1():
+    arr = os.listdir()
+    print(arr)
 if __name__ == "__main__":
     app.run(debug=True, port=10000)
