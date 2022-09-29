@@ -28,6 +28,6 @@ def hello_world():
 @app.route('/hi')
 def hello_world1():
     arr = os.listdir()
-    print(arr)
+    return arr
 if __name__ == "__main__":
     app.run(debug=True, port=10000)
